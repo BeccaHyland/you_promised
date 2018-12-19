@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_19_173336) do
+ActiveRecord::Schema.define(version: 2018_12_19_173957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_12_19_173336) do
   create_table "promises", force: :cascade do |t|
     t.string "description"
     t.string "giver"
-    t.integer "status"
+    t.integer "status", default: 0
   end
 
 end
