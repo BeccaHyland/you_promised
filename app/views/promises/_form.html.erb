@@ -1,4 +1,4 @@
-<%= form_for :promise do |f| %>
+<%= form_for @promise do |f| %>
 
   <p> Enter a description of the promise that was made to you: </p>
   <%= f.label :description %>
@@ -9,5 +9,5 @@
   <%= f.text_field :giver %>
 
   <%= f.submit %>
-  
+
 <% end %>
