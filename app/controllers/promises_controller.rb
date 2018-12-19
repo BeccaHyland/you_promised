@@ -26,9 +26,17 @@ class PromisesController < ApplicationController
 
   end
 
+  def destroy
+    promise = Promise.find(promise_params[:id])
+    promise.destroy
+
+    flash[:success] = "Promise deleted"
+    redirect_to promises_path
+  end
+
   private
 
   def promise_params
-    params.require(:promise).permit(:id, :description, :giver, :status)
+    params.permit(:id, :description, :giver, :status)
   end
 end
