@@ -23,7 +23,15 @@ class PromisesController < ApplicationController
   end
 
   def update
-
+    @promise = Promise.find(promise_params[:id])
+    @promise.update(promise_params)
+    if @promise.save
+      flash[:notice] = "Promise updated."
+      redirect_to promises_path
+    else
+      flash[:notice] = "Oops, please try again"
+      render :edit
+    end
   end
 
   def destroy
@@ -37,6 +45,6 @@ class PromisesController < ApplicationController
   private
 
   def promise_params
-    params.permit(:id, :description, :giver, :status)
+    params.require(:promise).permit(:id, :description, :giver, :status)
   end
 end
