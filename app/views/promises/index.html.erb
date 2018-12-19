@@ -1,9 +1,14 @@
 <h1> You Promised </h1>
 <h3> an app to remind you what you were promised </h3>
 
+<%= link_to "Add New Promise", new_promise_path %><br><br>
+
 <h2> All Promises </h2>
 <%@promises.each do |promise|%>
   <h4>Promise: <%= promise.description %></h4>
   <p>Promise Giver: <%= promise.giver %><p>
   <p>Status of this Promise: <%= promise.status %><p>
+  <%= link_to "Edit this Promise", edit_promise_path(promise) %>
+  <%= link_to "Delete this Promise", promise_path(promise), method: "delete"%><br><br>
+
 <% end %>

@@ -1,3 +1,3 @@
 class Promise < ApplicationRecord
-  enum status: {"in progress": 0, "abandoned": 1, "done": 2}
+  enum status: {"In progress - I can't wait!": 0, "Abandoned, shame shame": 1, "Done! hurray!": 2}
 end

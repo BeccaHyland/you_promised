@@ -1,0 +1,13 @@
+<%= form_for :promise do |f| %>
+
+  <p> Enter a description of the promise that was made to you: </p>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <p> Enter the name of the promise-giver: </p>
+  <%= f.label :giver %>
+  <%= f.text_field :giver %>
+
+  <%= f.submit %>
+  
+<% end %>
